@@ -9,7 +9,6 @@
     var http__default = /*#__PURE__*/_interopDefaultLegacy(http);
     var fs__default = /*#__PURE__*/_interopDefaultLegacy(fs);
     var crypto__default = /*#__PURE__*/_interopDefaultLegacy(crypto);
-
     class ServiceError extends Error {
         constructor(message = 'Service Error') {
             super(message);

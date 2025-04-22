@@ -1,4 +1,4 @@
-//import Navigation from '@/components/Navigation'
+import Image from 'next/image'
 import './index.css'
 
 export default function Home() {
@@ -19,7 +19,7 @@ export default function Home() {
                 <h2 className="text-3xl font-bold text-center mb-8">Cars Available for Sale</h2>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 <div className="bg-white p-4 rounded-lg shadow-lg">
-                    <img src="https://images.unsplash.com/photo-1592363187340-f828a6f60c3f" alt="Car" className="h-48 w-full object-cover rounded-md mb-4"/>
+                    <Image width={400} height={200} src="https://images.unsplash.com/photo-1592363187340-f828a6f60c3f" alt="Car" className="h-48 w-full object-cover rounded-md mb-4"/>
                     <h3 className="text-xl font-semibold">2021 Tesla Model 3</h3>
                     <p className="text-gray-500">Electric Sedan</p>
                     <div className="flex items-center justify-between mt-4">
@@ -29,7 +29,7 @@ export default function Home() {
                 </div>
     
                 <div className="bg-white p-4 rounded-lg shadow-lg">
-                    <img src="https://images.unsplash.com/photo-1615933406712-10dff34c50a9" alt="Car" className="h-48 w-full object-cover rounded-md mb-4"/>
+                    <Image width={400} height={200} src="https://images.unsplash.com/photo-1615933406712-10dff34c50a9" alt="Car" className="h-48 w-full object-cover rounded-md mb-4"/>
                     <h3 className="text-xl font-semibold">2019 BMW M3</h3>
                     <p className="text-gray-500">Luxury Sports Sedan</p>
                     <div className="flex items-center justify-between mt-4">
@@ -39,7 +39,7 @@ export default function Home() {
                 </div>
     
                 <div className="bg-white p-4 rounded-lg shadow-lg">
-                    <img src="https://images.unsplash.com/photo-1591367434622-453aaaf4ff8f" alt="Car" className="h-48 w-full object-cover rounded-md mb-4"/>
+                    <Image width={400} height={200} src="https://images.unsplash.com/photo-1591367434622-453aaaf4ff8f" alt="Car" className="h-48 w-full object-cover rounded-md mb-4"/>
                     <h3 className="text-xl font-semibold">2020 Audi A4</h3>
                     <p className="text-gray-500">Compact Luxury Sedan</p>
                     <div className="flex items-center justify-between mt-4">
