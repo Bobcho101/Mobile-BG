@@ -17,6 +17,18 @@ const routes = [
         name: 'Contact',
         path: '/contact',
     },
+    {
+        name: 'Login',
+        path: '/login',
+    },
+    {
+        name: 'Register',
+        path: '/register',
+    },
+    {
+        name: 'Logout',
+        path: '/logout',
+    },
 ];
 
 export default function Navigation() {
