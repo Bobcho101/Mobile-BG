@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ChangeEvent, useReducer } from "react";
+import { ChangeEvent, FormEvent, useReducer } from "react";
 
 interface FormState {
     username: string,
@@ -44,6 +44,12 @@ const Register: React.FC = () => {
         });
     };
 
+    const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+        console.log(state);
+        
+    }
+
     return (
         <>
         <div className="min-h-screen bg-gray-50 flex items-center justify-center px-4 py-12">
@@ -52,7 +58,7 @@ const Register: React.FC = () => {
                 Create an Account
                 </h2>
 
-                <form className="space-y-6">
+                <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
                     <label htmlFor="username" className="block text-sm font-medium text-gray-700 mb-1">
                     Username
@@ -119,7 +125,7 @@ const Register: React.FC = () => {
 
                 <button
                     type="submit"
-                    className="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition"
+                    className="w-full cursor-pointer bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition"
                 >
                     Register
                 </button>
