@@ -1,6 +1,49 @@
 import Link from "next/link";
+import { ChangeEvent, useReducer } from "react";
+
+interface FormState {
+    username: string,
+    email: string,
+    password: string,
+    confirmPassword: string,
+};
+
+interface Action {
+    field: string,
+    value: string,
+    type: string,
+}
+
+
+const initialState: FormState = {
+    username: "",
+    email: "",
+    password: "",
+    confirmPassword: "",
+};
+
+const formReducer = (state: FormState, action: Action): FormState => {
+    if(action.type === 'CHANGE_FIELD_VALUE'){
+        return {
+            ...state,
+            [action.field]: action.value,
+        }
+    } else{
+        return state;
+    }
+}
 
 const Register: React.FC = () => {
+    const [ state, dispatch ] = useReducer(formReducer, initialState);
+
+    const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+        dispatch({
+          type: 'CHANGE_FIELD_VALUE',
+          field: e.target.name,
+          value: e.target.value,
+        });
+    };
+
     return (
         <>
         <div className="min-h-screen bg-gray-50 flex items-center justify-center px-4 py-12">
@@ -12,10 +55,12 @@ const Register: React.FC = () => {
                 <form className="space-y-6">
                 <div>
                     <label htmlFor="username" className="block text-sm font-medium text-gray-700 mb-1">
-                    Full Name
+                    Username
                     </label>
                     <input
                     type="text"
+                    onChange={handleChange}
+                    value={state.username}
                     id="username"
                     name="username"
                     className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none"
@@ -30,6 +75,8 @@ const Register: React.FC = () => {
                     </label>
                     <input
                     type="email"
+                    onChange={handleChange}
+                    value={state.email}
                     id="email"
                     name="email"
                     className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none"
@@ -45,6 +92,8 @@ const Register: React.FC = () => {
                     <input
                     type="password"
                     id="password"
+                    onChange={handleChange}
+                    value={state.password}
                     name="password"
                     className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none"
                     placeholder="Enter password"
@@ -59,6 +108,8 @@ const Register: React.FC = () => {
                     <input
                     type="password"
                     id="confirmPassword"
+                    onChange={handleChange}
+                    value={state.confirmPassword}
                     name="confirmPassword"
                     className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none"
                     placeholder="Confirm password"
