@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { useRouter } from "next/router";
 import { useState } from "react";
 
 interface Route {
@@ -40,6 +41,13 @@ const routes: Route[] = [
 
 export default function Navigation() {
     const [isOpen, setIsOpen] = useState(false);
+    const [currentRoute, setCurrentRoute ] = useState('Home');
+    const router = useRouter();
+
+    const changeRoute = (routeName: string, routePath: string) => {
+        setCurrentRoute(routeName);
+        router.push(routePath);
+    };
 
     return (
         <>
@@ -49,9 +57,9 @@ export default function Navigation() {
 
             <nav className="hidden md:flex space-x-6">
                 {routes.map((route, index) => (
-                <Link key={index} href={route.path} className="hover:text-blue-200">
+                <button onClick={() => changeRoute(route.name, route.path)} key={index} className={`hover:text-blue-200 cursor-pointer ${currentRoute === route.name && "underline underline-offset-4"}`}>
                     {route.name}
-                </Link>
+                </button>
                 ))}
             </nav>
 
