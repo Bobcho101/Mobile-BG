@@ -1,7 +1,48 @@
-import React from "react";
+import React, { ChangeEvent, useReducer } from "react";
 import Link from "next/link";
 
+
+interface FormState {
+    email: string,
+    password: string,
+};
+
+interface Action {
+    field: string,
+    value: string,
+    type: string,
+}
+
+
+const initialState: FormState = {
+    email: "",
+    password: "",
+};
+
+const formReducer = (state: FormState, action: Action): FormState => {
+    if(action.type === 'CHANGE_FIELD_VALUE'){
+        return {
+            ...state,
+            [action.field]: action.value,
+        }
+    } else{
+        return state;
+    }
+}
+
+
+
 const Login: React.FC = () => {
+    const [ state, dispatch ] = useReducer(formReducer, initialState);
+
+    const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+        dispatch({
+            type: 'CHANGE_FIELD_VALUE',
+            field: e.target.name,
+            value: e.target.value,
+        });
+    };
+
     return (
         <div className="min-h-screen bg-gray-50 flex items-center justify-center px-4 py-12">
             <div className="max-w-md w-full bg-white p-8 rounded-xl shadow-md">
@@ -16,6 +57,8 @@ const Login: React.FC = () => {
                     </label>
                     <input
                     type="email"
+                    onChange={handleChange}
+                    value={state.email}
                     id="email"
                     name="email"
                     className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none"
@@ -30,6 +73,8 @@ const Login: React.FC = () => {
                     </label>
                     <input
                     type="password"
+                    onChange={handleChange}
+                    value={state.password}
                     id="password"
                     name="password"
                     className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none"
