@@ -2,6 +2,7 @@ import type { AppProps } from 'next/app';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import Head from 'next/head';
+import '@/styles/index.css';
 
 
 function MyApp({ Component, pageProps }: AppProps) {
