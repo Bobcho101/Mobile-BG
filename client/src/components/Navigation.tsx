@@ -40,13 +40,14 @@ const routes: Route[] = [
 ];
 
 export default function Navigation() {
-    const [isOpen, setIsOpen] = useState(false);
-    const [currentRoute, setCurrentRoute ] = useState('Home');
+    const [ isOpen, setIsOpen ] = useState(false);
     const router = useRouter();
 
-    const changeRoute = (routeName: string, routePath: string) => {
-        setCurrentRoute(routeName);
-        router.push(routePath);
+    const isCurrentRoute = (currentRoute: string) => {
+        const match = routes.find(() => {
+            return router.pathname === currentRoute;
+        });
+        return match?.name;
     };
 
     return (
@@ -57,9 +58,9 @@ export default function Navigation() {
 
             <nav className="hidden md:flex space-x-6">
                 {routes.map((route, index) => (
-                <button onClick={() => changeRoute(route.name, route.path)} key={index} className={`hover:text-blue-200 cursor-pointer ${currentRoute === route.name && "underline underline-offset-4"}`}>
+                <Link href={route.path} key={index} className={`hover:text-blue-200 cursor-pointer ${isCurrentRoute(route.path) ? "underline underline-offset-4" : ""}`}>
                     {route.name}
-                </button>
+                </Link>
                 ))}
             </nav>
 

@@ -46,8 +46,11 @@ const Register: React.FC = () => {
 
     const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        console.log(state);
-        
+         
+        if(state.password !== state.confirmPassword){
+            alert('Passwords do not match!')
+            return;
+        }
     }
 
     return (
