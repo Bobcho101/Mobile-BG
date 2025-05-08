@@ -79,7 +79,7 @@ const Catalog: React.FC = () => {
 
     return (
         <>
-         <div className="bg-gray-50 min-h-screen py-16 px-4 sm:px-6 lg:px-8">
+        <div className="bg-gray-50 min-h-screen py-16 px-4 sm:px-6 lg:px-8">
             <h1 className="text-3xl sm:text-4xl font-bold text-center mb-10">
                 Car Catalog
             </h1>
@@ -103,6 +103,7 @@ const Catalog: React.FC = () => {
                     </h3>
                     <p className="text-gray-600">{car.type}</p>
                     <p className="text-gray-500">Engine: {car.engine}</p>
+                    <p className="text-gray-500">Transmission: {car.transmission}</p>
                     <div className="flex items-center justify-between mt-4">
                         <span className="text-lg font-bold text-blue-600">
                         {car.price}
@@ -118,7 +119,7 @@ const Catalog: React.FC = () => {
                 </div>
                 ))}
             </div>
-            </div>
+        </div>
         </>
     )
 };
