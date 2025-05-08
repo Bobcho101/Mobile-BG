@@ -18,7 +18,7 @@ export const getServerSideProps = async () => {
     try{
         const response = await fetch(baseUrl); 
         const data = await response.json();
-            
+
         return {
             props: {
               cars: data, 
@@ -43,6 +43,17 @@ const Catalog: React.FC<{ cars: Car[] }> = ({ cars }) => {
             <h1 className="text-3xl sm:text-4xl font-bold text-center mb-10">
                 Car Catalog
             </h1>
+            <div className="max-w-7xl mx-auto mb-6 flex justify-end">
+                <label className="flex items-center space-x-2 text-sm text-gray-700">
+                <span>Sort by:</span>
+                <select className="border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    <option value="price-asc">Price: Low to High</option>
+                    <option value="price-desc">Price: High to Low</option>
+                    <option value="brand-asc">Brand A-Z</option>
+                    <option value="brand-desc">Brand Z-A</option>
+                </select>
+                </label>
+            </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
                 {cars.map((car, index) => (
                 <div
