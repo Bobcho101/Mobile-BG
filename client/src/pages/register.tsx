@@ -48,8 +48,7 @@ const Register: React.FC = () => {
         e.preventDefault();
          
         if(state.password !== state.confirmPassword){
-            alert('Passwords do not match!')
-            return;
+            return alert('Passwords do not match!');
         }
     }
 
