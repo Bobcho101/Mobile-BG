@@ -1345,6 +1345,112 @@
     	}
     };
     var seedData = {
+        cars: {
+           "a1b2c3d4": {
+                ownerId: "user-001",
+                src: "https://images.unsplash.com/photo-1603216934532-6d98729f9c60",
+                brand: "Mercedes-Benz",
+                model: "C-Class",
+                type: "Luxury Sedan",
+                engine: "Petrol",
+                transmission: "Automatic",
+                price: 42000,
+                desc: "A comfortable and stylish sedan with refined handling and a premium interior.",
+                kmTravelled: 23000,
+                horsepower: 255
+            },
+            "b2c3d4e5": {
+                ownerId: "user-001",
+                src: "https://images.unsplash.com/photo-1570129477492-45c003edd2be",
+                brand: "Ford",
+                model: "Mustang GT",
+                type: "Muscle Car",
+                engine: "Petrol",
+                transmission: "Manual",
+                price: 39000,
+                desc: "A bold American classic with thrilling performance and aggressive styling.",
+                kmTravelled: 18000,
+                horsepower: 450
+            },
+            "c3d4e5f6": {
+                ownerId: "user-002",
+                src: "https://images.unsplash.com/photo-1549924231-f129b911e442",
+                brand: "Honda",
+                model: "Civic",
+                type: "Compact Sedan",
+                engine: "Gas",
+                transmission: "Automatic",
+                price: 22500,
+                desc: "Reliable and efficient, this sedan is ideal for daily commuting.",
+                kmTravelled: 32000,
+                horsepower: 158
+            },
+            "d4e5f6g7": {
+                ownerId: "user-002",
+                src: "https://images.unsplash.com/photo-1583267741379-c715a693f879",
+                brand: "Toyota",
+                model: "Supra",
+                type: "Performance Coupe",
+                engine: "Petrol",
+                transmission: "Manual",
+                price: 50000,
+                desc: "A legendary sports car with turbocharged excitement and sleek design.",
+                kmTravelled: 12000,
+                horsepower: 382
+            },
+            "e5f6g7h8": {
+                ownerId: "user-003",
+                src: "https://images.unsplash.com/photo-1604335399103-74fb1e5c1574",
+                brand: "Chevrolet",
+                model: "Camaro",
+                type: "Sports Car",
+                engine: "Diesel",
+                transmission: "Manual",
+                price: 28000,
+                desc: "Bold styling and strong performance define this classic American muscle.",
+                kmTravelled: 25000,
+                horsepower: 335
+            },
+            "f6g7h8i9": {
+                ownerId: "user-003",
+                src: "https://images.unsplash.com/photo-1588617358531-bc64e8f48f4d",
+                brand: "Subaru",
+                model: "WRX",
+                type: "AWD Sedan",
+                engine: "Gas",
+                transmission: "Automatic",
+                price: 33000,
+                desc: "A rally-inspired car offering all-wheel-drive confidence and spirited driving.",
+                kmTravelled: 27000,
+                horsepower: 268
+            },
+            "g7h8i9j0": {
+                ownerId: "user-004",
+                src: "https://images.unsplash.com/photo-1592363187340-f828a6f60c3f",
+                brand: "Tesla",
+                model: "Model 3",
+                type: "Electric Sedan",
+                engine: "Electric",
+                transmission: "Manual",
+                price: 38000,
+                desc: "All-electric performance with cutting-edge tech and minimalist design.",
+                kmTravelled: 15000,
+                horsepower: 283
+            },
+            "h8i9j0k1": {
+                ownerId: "user-004",
+                src: "https://images.unsplash.com/photo-1615933406712-10dff34c50a9",
+                brand: "BMW",
+                model: "i4",
+                type: "Electric Coupe",
+                engine: "Electric",
+                transmission: "Automatic",
+                price: 55000,
+                desc: "A luxury EV with dynamic driving, high-end materials, and sleek aesthetics.",
+                kmTravelled: 8000,
+                horsepower: 335
+            },
+        },
     	recipes: {
     		"3987279d-0ad4-4afb-8ca9-5b256ae3b298": {
     			_ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
