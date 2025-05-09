@@ -16,6 +16,7 @@ type Car = {
 export const getServerSideProps = async () => {
     const data = await fetchCars();
 
+    
     return {
         props: {
             cars: data
