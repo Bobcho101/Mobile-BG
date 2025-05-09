@@ -1,5 +1,6 @@
-import React, { ChangeEvent, useReducer } from "react";
+import React, { ChangeEvent, FormEvent, useReducer } from "react";
 import Link from "next/link";
+import { useLogin } from "@/api/authApi";
 
 
 interface FormState {
@@ -34,6 +35,7 @@ const formReducer = (state: FormState, action: Action): FormState => {
 
 const Login: React.FC = () => {
     const [ state, dispatch ] = useReducer(formReducer, initialState);
+    const { login, loading, error } = useLogin();
 
     const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
         dispatch({
@@ -43,6 +45,15 @@ const Login: React.FC = () => {
         });
     };
 
+    const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+
+        const authToken = await login(state.email, state.password);
+
+        console.log(authToken);
+        
+    }
+
     return (
         <div className="min-h-screen bg-gray-50 flex items-center justify-center px-4 py-12">
             <div className="max-w-md w-full bg-white p-8 rounded-xl shadow-md">
@@ -50,7 +61,7 @@ const Login: React.FC = () => {
                 Log In
                 </h2>
 
-                <form className="space-y-6">
+                <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
                     <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
                     Email Address
