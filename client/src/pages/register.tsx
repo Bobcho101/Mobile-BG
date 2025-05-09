@@ -48,15 +48,21 @@ const Register: React.FC = () => {
 
     const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
+
+        if(state.username.trim() === '' || state.email.trim() === '' || 
+        state.password.trim() === '' || state.confirmPassword.trim() === '')
+        {
+            return alert('All fields are required!');
+        }
          
         if(state.password !== state.confirmPassword){
             return alert('Passwords do not match!');
         }
 
+
         const authToken = await register(state.username, state.email, state.password);
 
         console.log(authToken);
-        
     };
 
 

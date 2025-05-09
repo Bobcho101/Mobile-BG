@@ -48,10 +48,13 @@ const Login: React.FC = () => {
     const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
 
+        if(state.email.trim() === '' || state.password.trim() === ''){
+            return alert('All fields are required!');
+        }
+        
         const authToken = await login(state.email, state.password);
 
         console.log(authToken);
-        
     }
 
     return (
