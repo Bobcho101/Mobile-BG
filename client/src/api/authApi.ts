@@ -1,0 +1,40 @@
+import { useState } from "react";
+
+const baseUrl: string = 'http://localhost:3030/users/';
+
+export const useRegister = (username: string, email: string, password: string) => {
+    const [ loading, setLoading ] = useState(false);
+    const [ error, setError ] = useState<string | null>(null);
+
+    const register = async () => {
+        setLoading(true);
+
+        try{
+            const res = await fetch(`${baseUrl}register`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    username,
+                    email,
+                    password
+                })
+            });
+
+            const authToken = await res.json();
+            return authToken;
+        } catch(err: any){
+            setError(err.message);
+            console.log(err.message);
+        } finally{
+            setLoading(false);
+        }
+    };
+
+    return {
+        register,
+        loading,
+        error,
+    }
+};

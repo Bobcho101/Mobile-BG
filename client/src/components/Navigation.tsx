@@ -14,7 +14,7 @@ const routes: Route[] = [
         path: '/',
     },
     {
-        name: 'Cars for Sale',
+        name: 'Vehicles for Sale',
         path: '/catalog',
     },
     {
