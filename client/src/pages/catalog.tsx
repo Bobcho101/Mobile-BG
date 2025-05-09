@@ -1,3 +1,4 @@
+import { fetchCars } from "@/api/carsApi";
 import Image from "next/image";
 import React from "react";
 
@@ -13,25 +14,13 @@ type Car = {
 
 
 export const getServerSideProps = async () => {
-    const baseUrl: string = "http://localhost:3030/data/cars";
+    const data = await fetchCars();
 
-    try{
-        const response = await fetch(baseUrl); 
-        const data = await response.json();
-
-        return {
-            props: {
-              cars: data, 
-            },
-        };
-    } catch(err: any){
-        console.log(err.message);
-        return {
-            props: {
-                cars: []
-            }
+    return {
+        props: {
+            cars: data
         }
-    }
+    };
 };
 
 const Catalog: React.FC<{ cars: Car[] }> = ({ cars }) => {
