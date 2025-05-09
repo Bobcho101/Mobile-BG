@@ -1,3 +1,4 @@
+import { useRegister } from "@/api/authApi";
 import Link from "next/link";
 import { ChangeEvent, FormEvent, useReducer } from "react";
 
@@ -35,6 +36,7 @@ const formReducer = (state: FormState, action: Action): FormState => {
 
 const Register: React.FC = () => {
     const [ state, dispatch ] = useReducer(formReducer, initialState);
+    const { register, loading, error } = useRegister();
 
     const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
         dispatch({
@@ -44,13 +46,19 @@ const Register: React.FC = () => {
         });
     };
 
-    const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+    const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
          
         if(state.password !== state.confirmPassword){
             return alert('Passwords do not match!');
         }
-    }
+
+        const authToken = await register(state.username, state.email, state.password);
+
+        console.log(authToken);
+        
+    };
+
 
     return (
         <>

@@ -2,11 +2,11 @@ import { useState } from "react";
 
 const baseUrl: string = 'http://localhost:3030/users/';
 
-export const useRegister = (username: string, email: string, password: string) => {
+export const useRegister = () => {
     const [ loading, setLoading ] = useState(false);
     const [ error, setError ] = useState<string | null>(null);
 
-    const register = async () => {
+    const register = async (username: string, email: string, password: string) => {
         setLoading(true);
 
         try{
