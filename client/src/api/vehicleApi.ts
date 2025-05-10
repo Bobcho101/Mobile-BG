@@ -1,7 +1,7 @@
 // import { useEffect, useState } from "react";
 const baseUrl: string = "http://localhost:3030/data/vehicles";
 
-export const fetchCars = async () => {
+export const fetchVehicles = async () => {
     try{
         const response = await fetch(baseUrl); 
         const data = await response.json();
