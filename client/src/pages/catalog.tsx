@@ -1,5 +1,6 @@
 import { fetchVehicles } from "@/api/vehicleApi";
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 type Car = {
@@ -35,26 +36,28 @@ const Catalog: React.FC<{ vehicles: Car[] }> = ({ vehicles }) => {
              <div className="max-w-7xl mx-auto mb-6">
                 <div className="flex flex-wrap gap-4 justify-center sm:justify-start">
                 {[
-                    { label: "All", img: "/images/all.png" },
-                    { label: "Cars", img: "/images/car.png" },
-                    { label: "Motorcycles", img: "/images/motorcycle.png" },
-                    { label: "Tractors", img: "/images/tractor.png" },
-                    { label: "Trucks", img: "/images/truck.png" },
-                    { label: "Buses", img: "/images/bus.png" },
-                    { label: "Caravans", img: "/images/caravan.png" },
-                    { label: "Industrial", img: "/images/excavator.png" },
+                    { label: "All", img: "/images/all.png", href:"" },
+                    { label: "Cars", img: "/images/car.png", href:"cars" },
+                    { label: "Jeeps", img: "/images/jeep.png", href:"jeeps" },
+                    { label: "Motorcycles", img: "/images/motorcycle.png", href:"motorcycles" },
+                    { label: "Tractors", img: "/images/tractor.png", href:"tractors" },
+                    { label: "Trucks", img: "/images/truck.png", href:"trucks" },
+                    { label: "Buses", img: "/images/bus.png", href:"buses" },
+                    { label: "Caravans", img: "/images/caravan.png", href:"caravans" },
+                    { label: "Industrial", img: "/images/excavator.png", href:"industrial" },
                 ].map((type) => (
-                    <div
+                    <Link
+                    href={type.href}
                     key={type.label}
                     className="flex flex-col items-center group cursor-pointer"
                     >
-                    <div className="w-14 h-14 sm:w-16 sm:h-16 bg-white border border-gray-300 rounded-full flex items-center justify-center hover:bg-gray-100 transition">
-                        <Image width={40} height={40} src={type.img} alt={type.label} className="w-8 h-8 sm:w-10 sm:h-10" />
-                    </div>
-                    <span className="mt-2 sm:mt-12 text-sm text-gray-700 bg-white px-2 py-1 rounded shadow transition-opacity duration-300 sm:opacity-0 sm:group-hover:opacity-100 sm:absolute">
-                        {type.label}
+                        <div className="w-14 h-14 sm:w-16 sm:h-16 bg-white border border-gray-300 rounded-full flex items-center justify-center hover:bg-gray-100 transition">
+                            <Image width={40} height={40} src={type.img} alt={type.label} className="w-8 h-8 sm:w-10 sm:h-10" />
+                        </div>
+                        <span className="mt-2 sm:mt-12 text-sm text-gray-700 bg-white px-2 py-1 rounded shadow transition-opacity duration-300 sm:opacity-0 sm:group-hover:opacity-100 sm:absolute">
+                            {type.label}
                         </span>
-                    </div>
+                    </Link>
                 ))}
                 </div>
             </div>
