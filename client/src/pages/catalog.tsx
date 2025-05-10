@@ -35,12 +35,14 @@ const Catalog: React.FC<{ vehicles: Car[] }> = ({ vehicles }) => {
              <div className="max-w-7xl mx-auto mb-6">
                 <div className="flex flex-wrap gap-4 justify-center sm:justify-start">
                 {[
+                    { label: "All", img: "/images/all.png" },
                     { label: "Cars", img: "/images/car.png" },
                     { label: "Motorcycles", img: "/images/motorcycle.png" },
                     { label: "Tractors", img: "/images/tractor.png" },
                     { label: "Trucks", img: "/images/truck.png" },
-                    // { label: "SUV", img: "/icons/suv.png" },
-                    // { label: "Van", img: "/icons/van.png" },
+                    { label: "Buses", img: "/images/bus.png" },
+                    { label: "Caravans", img: "/images/caravan.png" },
+                    { label: "Industrial", img: "/images/excavator.png" },
                 ].map((type) => (
                     <div
                     key={type.label}
