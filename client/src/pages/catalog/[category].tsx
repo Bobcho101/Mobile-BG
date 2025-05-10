@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
-type Car = {
+type Vehicle = {
     src: string;
     brand: string;
     model: string;
@@ -14,8 +14,9 @@ type Car = {
 };
 
 
-export const getServerSideProps = async () => {
-    const data = await fetchVehicles();
+export const getServerSideProps = async ({ params }: { params: { category: string }}) => {
+    const { category } = params;
+    const data = await fetchVehicles(category);
 
     return {
         props: {
@@ -24,8 +25,9 @@ export const getServerSideProps = async () => {
     };
 };
 
-const Catalog: React.FC<{ vehicles: Car[] }> = ({ vehicles }) => {
-
+const Catalog: React.FC<{ vehicles: Vehicle[] }> = ({ vehicles }) => {
+    console.log(vehicles.length);
+    
     return (
         <>
         <div className="bg-gray-50 min-h-screen py-16 px-4 sm:px-6 lg:px-8">
@@ -36,7 +38,7 @@ const Catalog: React.FC<{ vehicles: Car[] }> = ({ vehicles }) => {
              <div className="max-w-7xl mx-auto mb-6">
                 <div className="flex flex-wrap gap-4 justify-center sm:justify-start">
                 {[
-                    { label: "All", img: "/images/all.png", href:"" },
+                    // { label: "All", img: "/images/all.png", href:"" },
                     { label: "Cars", img: "/images/car.png", href:"cars" },
                     { label: "Jeeps", img: "/images/jeep.png", href:"jeeps" },
                     { label: "Motorcycles", img: "/images/motorcycle.png", href:"motorcycles" },

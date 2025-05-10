@@ -1,9 +1,9 @@
 // import { useEffect, useState } from "react";
-const baseUrl: string = "http://localhost:3030/data/vehicles";
+const baseUrl: string = "http://localhost:3030/data/";
 
-export const fetchVehicles = async () => {
+export const fetchVehicles = async (category: string) => {
     try{
-        const response = await fetch(baseUrl); 
+        const response = await fetch(baseUrl + category); 
         const data = await response.json();
         return data;
     } catch(err: any){
