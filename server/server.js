@@ -1345,174 +1345,246 @@
     	}
     };
     var seedData = {
-        vehicles: {
-           "a1b2c3d4": {
-                ownerId: "user-001",
-                src: "https://images.unsplash.com/photo-1603216934532-6d98729f9c60",
-                brand: "Mercedes-Benz",
-                model: "C-Class",
-                type: "Luxury Sedan",
-                engine: "Petrol",
-                transmission: "Automatic",
-                price: 42000,
-                desc: "A comfortable and stylish sedan with refined handling and a premium interior.",
-                kmTravelled: 23000,
-                horsepower: 255
+        "cars": {
+            "a1b2c3d4": {
+                "ownerId": "user-001",
+                "src": "https://images.unsplash.com/photo-1603216934532-6d98729f9c60",
+                "brand": "Mercedes-Benz",
+                "model": "C-Class",
+                "type": "Luxury Sedan",
+                "engine": "Petrol",
+                "transmission": "Automatic",
+                "price": 42000,
+                "desc": "A comfortable and stylish sedan with refined handling and a premium interior.",
+                "kmTravelled": 23000,
+                "horsepower": 255,
+                "category": "cars"
             },
             "b2c3d4e5": {
-                ownerId: "user-001",
-                src: "https://images.unsplash.com/photo-1570129477492-45c003edd2be",
-                brand: "Ford",
-                model: "Mustang GT",
-                type: "Muscle Car",
-                engine: "Petrol",
-                transmission: "Manual",
-                price: 39000,
-                desc: "A bold American classic with thrilling performance and aggressive styling.",
-                kmTravelled: 18000,
-                horsepower: 450
+                "ownerId": "user-001",
+                "src": "https://images.unsplash.com/photo-1570129477492-45c003edd2be",
+                "brand": "Ford",
+                "model": "Mustang GT",
+                "type": "Muscle Car",
+                "engine": "Petrol",
+                "transmission": "Manual",
+                "price": 39000,
+                "desc": "A bold American classic with thrilling performance and aggressive styling.",
+                "kmTravelled": 18000,
+                "horsepower": 450,
+                "category": "cars"
             },
             "c3d4e5f6": {
-                ownerId: "user-002",
-                src: "https://images.unsplash.com/photo-1549924231-f129b911e442",
-                brand: "Honda",
-                model: "Civic",
-                type: "Compact Sedan",
-                engine: "Gas",
-                transmission: "Automatic",
-                price: 22500,
-                desc: "Reliable and efficient, this sedan is ideal for daily commuting.",
-                kmTravelled: 32000,
-                horsepower: 158
+                "ownerId": "user-002",
+                "src": "https://images.unsplash.com/photo-1549924231-f129b911e442",
+                "brand": "Honda",
+                "model": "Civic",
+                "type": "Compact Sedan",
+                "engine": "Gas",
+                "transmission": "Automatic",
+                "price": 22500,
+                "desc": "Reliable and efficient, this sedan is ideal for daily commuting.",
+                "kmTravelled": 32000,
+                "horsepower": 158,
+                "category": "cars"
             },
             "d4e5f6g7": {
-                ownerId: "user-002",
-                src: "https://images.unsplash.com/photo-1583267741379-c715a693f879",
-                brand: "Toyota",
-                model: "Supra",
-                type: "Performance Coupe",
-                engine: "Petrol",
-                transmission: "Manual",
-                price: 50000,
-                desc: "A legendary sports car with turbocharged excitement and sleek design.",
-                kmTravelled: 12000,
-                horsepower: 382
+                "ownerId": "user-002",
+                "src": "https://images.unsplash.com/photo-1583267741379-c715a693f879",
+                "brand": "Toyota",
+                "model": "Supra",
+                "type": "Performance Coupe",
+                "engine": "Petrol",
+                "transmission": "Manual",
+                "price": 50000,
+                "desc": "A legendary sports car with turbocharged excitement and sleek design.",
+                "kmTravelled": 12000,
+                "horsepower": 382,
+                "category": "cars"
             },
             "e5f6g7h8": {
-                ownerId: "user-003",
-                src: "https://images.unsplash.com/photo-1604335399103-74fb1e5c1574",
-                brand: "Chevrolet",
-                model: "Camaro",
-                type: "Sports Car",
-                engine: "Diesel",
-                transmission: "Manual",
-                price: 28000,
-                desc: "Bold styling and strong performance define this classic American muscle.",
-                kmTravelled: 25000,
-                horsepower: 335
+                "ownerId": "user-003",
+                "src": "https://images.unsplash.com/photo-1604335399103-74fb1e5c1574",
+                "brand": "Chevrolet",
+                "model": "Camaro",
+                "type": "Sports Car",
+                "engine": "Diesel",
+                "transmission": "Manual",
+                "price": 28000,
+                "desc": "Bold styling and strong performance define this classic American muscle.",
+                "kmTravelled": 25000,
+                "horsepower": 335,
+                "category": "cars"
             },
             "f6g7h8i9": {
-                ownerId: "user-003",
-                src: "https://images.unsplash.com/photo-1588617358531-bc64e8f48f4d",
-                brand: "Subaru",
-                model: "WRX",
-                type: "AWD Sedan",
-                engine: "Gas",
-                transmission: "Automatic",
-                price: 33000,
-                desc: "A rally-inspired car offering all-wheel-drive confidence and spirited driving.",
-                kmTravelled: 27000,
-                horsepower: 268
+                "ownerId": "user-003",
+                "src": "https://images.unsplash.com/photo-1588617358531-bc64e8f48f4d",
+                "brand": "Subaru",
+                "model": "WRX",
+                "type": "AWD Sedan",
+                "engine": "Gas",
+                "transmission": "Automatic",
+                "price": 33000,
+                "desc": "A rally-inspired car offering all-wheel-drive confidence and spirited driving.",
+                "kmTravelled": 27000,
+                "horsepower": 268,
+                "category": "cars"
             },
             "g7h8i9j0": {
-                ownerId: "user-004",
-                src: "https://images.unsplash.com/photo-1592363187340-f828a6f60c3f",
-                brand: "Tesla",
-                model: "Model 3",
-                type: "Electric Sedan",
-                engine: "Electric",
-                transmission: "Manual",
-                price: 38000,
-                desc: "All-electric performance with cutting-edge tech and minimalist design.",
-                kmTravelled: 15000,
-                horsepower: 283
+                "ownerId": "user-004",
+                "src": "https://images.unsplash.com/photo-1592363187340-f828a6f60c3f",
+                "brand": "Tesla",
+                "model": "Model 3",
+                "type": "Electric Sedan",
+                "engine": "Electric",
+                "transmission": "Manual",
+                "price": 38000,
+                "desc": "All-electric performance with cutting-edge tech and minimalist design.",
+                "kmTravelled": 15000,
+                "horsepower": 283,
+                "category": "cars"
             },
             "h8i9j0k1": {
-                ownerId: "user-004",
-                src: "https://images.unsplash.com/photo-1615933406712-10dff34c50a9",
-                brand: "BMW",
-                model: "i4",
-                type: "Electric Coupe",
-                engine: "Electric",
-                transmission: "Automatic",
-                price: 55000,
-                desc: "A luxury EV with dynamic driving, high-end materials, and sleek aesthetics.",
-                kmTravelled: 8000,
-                horsepower: 335
-            },
+                "ownerId": "user-004",
+                "src": "https://images.unsplash.com/photo-1615933406712-10dff34c50a9",
+                "brand": "BMW",
+                "model": "i4",
+                "type": "Electric Coupe",
+                "engine": "Electric",
+                "transmission": "Automatic",
+                "price": 55000,
+                "desc": "A luxury EV with dynamic driving, high-end materials, and sleek aesthetics.",
+                "kmTravelled": 8000,
+                "horsepower": 335,
+                "category": "cars"
+            }
         },
-    	recipes: {
-    		"3987279d-0ad4-4afb-8ca9-5b256ae3b298": {
-    			_ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
-    			name: "Easy Lasagna",
-    			img: "assets/lasagna.jpg",
-    			ingredients: [
-    				"1 tbsp Ingredient 1",
-    				"2 cups Ingredient 2",
-    				"500 g  Ingredient 3",
-    				"25 g Ingredient 4"
-    			],
-    			steps: [
-    				"Prepare ingredients",
-    				"Mix ingredients",
-    				"Cook until done"
-    			],
-    			_createdOn: 1613551279012
-    		},
-    		"8f414b4f-ab39-4d36-bedb-2ad69da9c830": {
-    			_ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
-    			name: "Grilled Duck Fillet",
-    			img: "assets/roast.jpg",
-    			ingredients: [
-    				"500 g  Ingredient 1",
-    				"3 tbsp Ingredient 2",
-    				"2 cups Ingredient 3"
-    			],
-    			steps: [
-    				"Prepare ingredients",
-    				"Mix ingredients",
-    				"Cook until done"
-    			],
-    			_createdOn: 1613551344360
-    		},
-    		"985d9eab-ad2e-4622-a5c8-116261fb1fd2": {
-    			_ownerId: "847ec027-f659-4086-8032-5173e2f9c93a",
-    			name: "Roast Trout",
-    			img: "assets/fish.jpg",
-    			ingredients: [
-    				"4 cups Ingredient 1",
-    				"1 tbsp Ingredient 2",
-    				"1 tbsp Ingredient 3",
-    				"750 g  Ingredient 4",
-    				"25 g Ingredient 5"
-    			],
-    			steps: [
-    				"Prepare ingredients",
-    				"Mix ingredients",
-    				"Cook until done"
-    			],
-    			_createdOn: 1613551388703
-    		}
-    	},
-    	comments: {
-    		"0a272c58-b7ea-4e09-a000-7ec988248f66": {
-    			_ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
-    			content: "Great recipe!",
-    			recipeId: "8f414b4f-ab39-4d36-bedb-2ad69da9c830",
-    			_createdOn: 1614260681375,
-    			_id: "0a272c58-b7ea-4e09-a000-7ec988248f66"
-    		}
-    	},
+        "jeeps": {
+            "dhjwie23d": {
+                ownerId: "user-005",
+                src: "https://images.unsplash.com/photo-1604079642141-00a759ba0a5d",  // Replace with an actual image of a Jeep
+                brand: "Jeep",
+                model: "Wrangler",
+                type: "SUV",
+                engine: "3.6L V6",
+                transmission: "Automatic",
+                price: 35000,
+                desc: "Legendary off-road SUV with unmatched durability and rugged style.",
+                kmTravelled: 22000,
+                horsepower: 285,
+                category: "jeeps", 
+            }
+        },
+        "motorcycles": {
+            "i9j0k1l2": {
+                "ownerId": "user-005",
+                "src": "https://images.unsplash.com/photo-1585077306740-d77a7fd57151",
+                "brand": "Harley-Davidson",
+                "model": "Iron 883",
+                "type": "Cruiser Motorcycle",
+                "engine": "Petrol",
+                "transmission": "Manual",
+                "price": 8500,
+                "desc": "A classic motorcycle with a raw, stylish look and a powerful engine.",
+                "kmTravelled": 12000,
+                "horsepower": 50,
+                "category": "motorcycles"
+            },
+            "j0k1l2m3": {
+                "ownerId": "user-006",
+                "src": "https://images.unsplash.com/photo-1600340353397-b2d7b631d8cf",
+                "brand": "Yamaha",
+                "model": "YZF-R6",
+                "type": "Sport Motorcycle",
+                "engine": "Petrol",
+                "transmission": "Manual",
+                "price": 10900,
+                "desc": "A high-performance sport bike with impressive handling and speed.",
+                "kmTravelled": 8000,
+                "horsepower": 117,
+                "category": "motorcycles"
+            }
+        },
+        "tractors": {
+            "k1l2m3n4": {
+                "ownerId": "user-007",
+                "src": "https://images.unsplash.com/photo-1589395352879-5c4e0e0a70c8",
+                "brand": "John Deere",
+                "model": "5055E",
+                "type": "Tractor",
+                "engine": "Diesel",
+                "transmission": "Manual",
+                "price": 25000,
+                "desc": "A reliable tractor for all your farming needs with great fuel efficiency.",
+                "kmTravelled": 1000,
+                "horsepower": 55,
+                "category": "tractors"
+            }
+        },
+        "trucks": {
+            "l2m3n4o5": {
+                "ownerId": "user-008",
+                "src": "https://images.unsplash.com/photo-1595884988254-d4e72765a45b",
+                "brand": "Mack",
+                "model": "Granite",
+                "type": "Truck",
+                "engine": "Diesel",
+                "transmission": "Manual",
+                "price": 80000,
+                "desc": "A powerful truck designed for heavy-duty jobs and long-distance hauling.",
+                "kmTravelled": 40000,
+                "horsepower": 450,
+                "category": "trucks"
+            }
+        },
+        "buses": {
+            "m3n4o5p6": {
+                "ownerId": "user-009",
+                "src": "https://images.unsplash.com/photo-1586940747015-3c7adf68d735",
+                "brand": "Volvo",
+                "model": "7900 Electric",
+                "type": "Bus",
+                "engine": "Electric",
+                "transmission": "Automatic",
+                "price": 150000,
+                "desc": "An electric bus designed for sustainable public transportation.",
+                "kmTravelled": 5000,
+                "horsepower": 320,
+                "category": "buses"
+            }
+        },
+        "caravans": {
+            "n4o5p6q7": {
+                "ownerId": "user-010",
+                "src": "https://images.unsplash.com/photo-1575129157383-bbd745a2c8b4",
+                "brand": "Airstream",
+                "model": "Classic",
+                "type": "Caravan",
+                "engine": "None",
+                "transmission": "None",
+                "price": 110000,
+                "desc": "A luxury caravan perfect for long trips and family vacations.",
+                "kmTravelled": 3000,
+                "horsepower": 0,
+                "category": "caravans"
+            }
+        },
+        "industrial": {
+            "o5p6q7r8": {
+                "ownerId": "user-011",
+                "src": "https://images.unsplash.com/photo-1592327110604-63b072e55956",
+                "brand": "Caterpillar",
+                "model": "CAT 320D",
+                "type": "Excavator",
+                "engine": "Diesel",
+                "transmission": "Automatic",
+                "price": 120000,
+                "desc": "A powerful industrial excavator for heavy-duty construction work.",
+                "kmTravelled": 1500,
+                "horsepower": 200,
+                "category": "industrial"
+            }
+        },
     	records: {
     		i01: {
     			name: "John1",
