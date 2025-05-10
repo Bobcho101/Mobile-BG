@@ -1,5 +1,5 @@
 // import { useEffect, useState } from "react";
-const baseUrl: string = "http://localhost:3030/data/cars";
+const baseUrl: string = "http://localhost:3030/data/vehicles";
 
 export const fetchCars = async () => {
     try{

@@ -1345,7 +1345,7 @@
     	}
     };
     var seedData = {
-        cars: {
+        vehicles: {
            "a1b2c3d4": {
                 ownerId: "user-001",
                 src: "https://images.unsplash.com/photo-1603216934532-6d98729f9c60",

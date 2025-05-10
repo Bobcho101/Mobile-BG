@@ -1,4 +1,4 @@
-import { fetchCars } from "@/api/carsApi";
+import { fetchCars } from "@/api/vehicleApi";
 import Image from "next/image";
 import React from "react";
 
@@ -16,15 +16,14 @@ type Car = {
 export const getServerSideProps = async () => {
     const data = await fetchCars();
 
-    
     return {
         props: {
-            cars: data
+            vehicles: data
         }
     };
 };
 
-const Catalog: React.FC<{ cars: Car[] }> = ({ cars }) => {
+const Catalog: React.FC<{ vehicles: Car[] }> = ({ vehicles }) => {
     
 
     return (
@@ -45,7 +44,7 @@ const Catalog: React.FC<{ cars: Car[] }> = ({ cars }) => {
                 </label>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
-                {cars.map((car, index) => (
+                {vehicles.map((car, index) => (
                 <div
                     key={index}
                     className="bg-white rounded-lg shadow-md overflow-hidden"
