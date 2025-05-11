@@ -68,6 +68,7 @@ const Register: React.FC = () => {
         if(authToken.error){
             return alert(authToken.error);
         }
+        
         userLoginHandler(authToken);
         return router.push("/");
     };

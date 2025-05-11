@@ -1,6 +1,7 @@
+import { UserContext } from "@/contexts/UserContext";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 
 interface Route {
     name: string;
@@ -8,7 +9,30 @@ interface Route {
 }
 
 
-const routes: Route[] = [
+const userRoutes: Route[] = [
+    {
+        name: 'Home',
+        path: '/',
+    },
+    {
+        name: 'Vehicles for Sale',
+        path: '/catalog/cars',
+    },
+    {
+        name: 'About',
+        path: '/about',
+    },
+    {
+        name: 'Contact',
+        path: '/contact',
+    },
+    {
+        name: 'Logout',
+        path: '/logout',
+    },
+];
+
+const guestRoutes: Route[] = [
     {
         name: 'Home',
         path: '/',
@@ -33,16 +57,15 @@ const routes: Route[] = [
         name: 'Register',
         path: '/register',
     },
-    {
-        name: 'Logout',
-        path: '/logout',
-    },
 ];
+
+
 
 export default function Navigation() {
     const [ isOpen, setIsOpen ] = useState(false);
     const router = useRouter();
     const [currentPath, setCurrentPath] = useState<string>("");
+    const { accessToken } = useContext(UserContext);
 
     useEffect(() => {
         if(router.pathname.split("/").includes("catalog")){
@@ -59,7 +82,8 @@ export default function Navigation() {
             <div className="text-xl font-bold">Mobile BG</div>
 
             <nav className="hidden md:flex space-x-6">
-                {routes.map((route, index) => (
+                {accessToken ? 
+                userRoutes.map((route, index) => (
                 <Link
                     href={route.path}
                     key={index}
@@ -69,7 +93,20 @@ export default function Navigation() {
                 >
                     {route.name}
                 </Link> 
-                ))}
+                ))
+                : guestRoutes.map((route, index) => (
+                <Link
+                    href={route.path}
+                    key={index}
+                    className={`hover:text-blue-200 cursor-pointer ${
+                        currentPath === route.path ? "underline underline-offset-4" : ""
+                    }`}
+                >
+                    {route.name}
+                </Link> 
+                ))
+                }
+                
             </nav>
 
             <button
@@ -94,7 +131,8 @@ export default function Navigation() {
                 </button>
             </div>
             <nav className="space-y-4">
-            {routes.map((route, index) => (
+            {accessToken ?
+            userRoutes.map((route, index) => (
                 <Link
                 key={index}
                 href={route.path}
@@ -103,7 +141,19 @@ export default function Navigation() {
                 >
                 {route.name}
                 </Link>
-            ))}
+            ))
+            : guestRoutes.map((route, index) => (
+                <Link
+                key={index}
+                href={route.path}
+                className="block hover:text-blue-200"
+                onClick={() => setIsOpen(false)}
+                >
+                {route.name}
+                </Link>
+            ))
+            }
+            
             </nav>
         </div>
 
