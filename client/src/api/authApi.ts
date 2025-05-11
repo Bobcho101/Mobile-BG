@@ -22,6 +22,12 @@ export const useRegister = () => {
                 })
             });
 
+            if(!res.ok){
+                return {
+                    error: "Email or username already taken!"
+                }
+            };
+
             const authToken = await res.json();
             return authToken;
         } catch(err: any){

@@ -65,6 +65,9 @@ const Register: React.FC = () => {
 
         const authToken = await register(state.username, state.email, state.password);
 
+        if(authToken.error){
+            return alert(authToken.error);
+        }
         userLoginHandler(authToken);
         return router.push("/");
     };
