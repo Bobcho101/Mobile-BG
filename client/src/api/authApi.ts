@@ -57,7 +57,11 @@ export const useLogin = () => {
                     password
                 })
             });
-
+            if(!res.ok){
+                return {
+                    error: 'Wrong email or password!'
+                }
+            }
             const authToken = await res.json();
             return authToken;
         } catch(err: any){
@@ -67,7 +71,6 @@ export const useLogin = () => {
             setLoading(false);
         }
     };
-
     return {
         login,
         loading,

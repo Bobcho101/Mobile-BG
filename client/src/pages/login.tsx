@@ -32,8 +32,6 @@ const formReducer = (state: FormState, action: Action): FormState => {
     }
 }
 
-
-
 const Login: React.FC = () => {
     const [ state, dispatch ] = useReducer(formReducer, initialState);
     const { login, loading, error } = useLogin();
@@ -54,9 +52,13 @@ const Login: React.FC = () => {
         if(state.email.trim() === '' || state.password.trim() === ''){
             return alert('All fields are required!');
         }
-        
+       
         const authToken = await login(state.email, state.password);
 
+        if(authToken.error){
+            return alert(authToken.error);
+        }
+        
         userLoginHandler(authToken);
         return router.push("/");
     }
