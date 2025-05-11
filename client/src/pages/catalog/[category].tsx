@@ -66,7 +66,13 @@ const Catalog: React.FC<{ vehicles: Vehicle[] }> = ({ vehicles }) => {
                 ))}
                 </div>
             </div>
-             
+
+            <div className="max-w-7xl mx-auto mb-2">
+                <h2 className="text-lg font-semibold text-gray-700">
+                    Selected Category: <span className="capitalize text-blue-600">{category}</span>
+                </h2>
+            </div>
+ 
             <div className="max-w-7xl mx-auto mb-6 flex justify-end">
                 <label className="flex items-center space-x-2 text-sm text-gray-700">
                 <span>Sort by:</span>
