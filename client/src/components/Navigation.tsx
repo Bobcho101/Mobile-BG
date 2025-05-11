@@ -45,7 +45,11 @@ export default function Navigation() {
     const [currentPath, setCurrentPath] = useState<string>("");
 
     useEffect(() => {
-        setCurrentPath(router.pathname);
+        if(router.pathname.split("/").includes("catalog")){
+            setCurrentPath("/catalog/cars")
+        } else{
+            setCurrentPath(router.pathname);
+        }
     }, [router.pathname]);
 
     return (
