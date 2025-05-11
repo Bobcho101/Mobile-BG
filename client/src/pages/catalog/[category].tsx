@@ -1,6 +1,7 @@
 import { fetchVehicles } from "@/api/vehicleApi";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import React from "react";
 
 type Vehicle = {
@@ -26,13 +27,15 @@ export const getServerSideProps = async ({ params }: { params: { category: strin
 };
 
 const Catalog: React.FC<{ vehicles: Vehicle[] }> = ({ vehicles }) => {
-    console.log(vehicles.length);
-    
+    const router = useRouter();
+    const { category } = router.query; 
+
+
     return (
         <>
         <div className="bg-gray-50 min-h-screen py-16 px-4 sm:px-6 lg:px-8">
             <h1 className="text-3xl sm:text-4xl font-bold text-center mb-10">
-                Car Catalog
+                Catalog
             </h1>
 
              <div className="max-w-7xl mx-auto mb-6">
@@ -51,9 +54,9 @@ const Catalog: React.FC<{ vehicles: Vehicle[] }> = ({ vehicles }) => {
                     <Link
                     href={type.href}
                     key={type.label}
-                    className="flex flex-col items-center group cursor-pointer"
+                    className="flex flex-col items-center group cursor-pointer" 
                     >
-                        <div className="w-14 h-14 sm:w-16 sm:h-16 bg-white border border-gray-300 rounded-full flex items-center justify-center hover:bg-gray-100 transition">
+                        <div className={`w-14 h-14 sm:w-16 sm:h-16 border ${type.label.toLowerCase() === category ? "bg-blue-500" : "bg-white"} border-gray-300 rounded-full flex items-center justify-center transition`}>
                             <Image width={40} height={40} src={type.img} alt={type.label} className="w-8 h-8 sm:w-10 sm:h-10" />
                         </div>
                         <span className="mt-2 sm:mt-12 text-sm text-gray-700 bg-white px-2 py-1 rounded shadow transition-opacity duration-300 sm:opacity-0 sm:group-hover:opacity-100 sm:absolute">
