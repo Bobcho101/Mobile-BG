@@ -1,7 +1,8 @@
-import React, { ChangeEvent, FormEvent, useReducer } from "react";
+import React, { ChangeEvent, FormEvent, useContext, useReducer } from "react";
 import Link from "next/link";
 import { useLogin } from "@/api/authApi";
-
+import { UserContext } from "@/contexts/UserContext";
+import { useRouter } from "next/router";
 
 interface FormState {
     email: string,
@@ -36,6 +37,8 @@ const formReducer = (state: FormState, action: Action): FormState => {
 const Login: React.FC = () => {
     const [ state, dispatch ] = useReducer(formReducer, initialState);
     const { login, loading, error } = useLogin();
+    const { userLoginHandler } = useContext(UserContext);
+    const router = useRouter();
 
     const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
         dispatch({
@@ -54,7 +57,8 @@ const Login: React.FC = () => {
         
         const authToken = await login(state.email, state.password);
 
-        console.log(authToken);
+        userLoginHandler(authToken);
+        return router.push("/");
     }
 
     return (

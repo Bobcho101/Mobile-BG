@@ -1,6 +1,8 @@
 import { useRegister } from "@/api/authApi";
+import { UserContext } from "@/contexts/UserContext";
 import Link from "next/link";
-import { ChangeEvent, FormEvent, useReducer } from "react";
+import { ChangeEvent, FormEvent, useContext, useReducer } from "react";
+import { useRouter } from "next/router";
 
 interface FormState {
     username: string,
@@ -37,6 +39,8 @@ const formReducer = (state: FormState, action: Action): FormState => {
 const Register: React.FC = () => {
     const [ state, dispatch ] = useReducer(formReducer, initialState);
     const { register, loading, error } = useRegister();
+    const { userLoginHandler } = useContext(UserContext);
+    const router = useRouter();
 
     const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
         dispatch({
@@ -59,13 +63,12 @@ const Register: React.FC = () => {
             return alert('Passwords do not match!');
         }
 
-
         const authToken = await register(state.username, state.email, state.password);
 
-        console.log(authToken);
+        userLoginHandler(authToken);
+        return router.push("/");
     };
-
-
+    
     return (
         <>
         <div className="min-h-screen bg-gray-50 flex items-center justify-center px-4 py-12">
