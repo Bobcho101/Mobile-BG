@@ -1358,7 +1358,8 @@
                 "desc": "A comfortable and stylish sedan with refined handling and a premium interior.",
                 "kmTravelled": 23000,
                 "horsepower": 255,
-                "category": "cars"
+                "category": "cars",
+                "id": "a1b2c3d4",
             },
             "b2c3d4e5": {
                 "ownerId": "user-001",
@@ -1372,7 +1373,8 @@
                 "desc": "A bold American classic with thrilling performance and aggressive styling.",
                 "kmTravelled": 18000,
                 "horsepower": 450,
-                "category": "cars"
+                "category": "cars",
+                "id": "b2c3d4e5",
             },
             "c3d4e5f6": {
                 "ownerId": "user-002",
@@ -1386,7 +1388,8 @@
                 "desc": "Reliable and efficient, this sedan is ideal for daily commuting.",
                 "kmTravelled": 32000,
                 "horsepower": 158,
-                "category": "cars"
+                "category": "cars",
+                "id": "c3d4e5f6",
             },
             "d4e5f6g7": {
                 "ownerId": "user-002",
@@ -1400,7 +1403,8 @@
                 "desc": "A legendary sports car with turbocharged excitement and sleek design.",
                 "kmTravelled": 12000,
                 "horsepower": 382,
-                "category": "cars"
+                "category": "cars",
+                "id": "d4e5f6g7",
             },
             "e5f6g7h8": {
                 "ownerId": "user-003",
@@ -1414,7 +1418,8 @@
                 "desc": "Bold styling and strong performance define this classic American muscle.",
                 "kmTravelled": 25000,
                 "horsepower": 335,
-                "category": "cars"
+                "category": "cars",
+                "id": "e5f6g7h8",
             },
             "f6g7h8i9": {
                 "ownerId": "user-003",
@@ -1428,7 +1433,8 @@
                 "desc": "A rally-inspired car offering all-wheel-drive confidence and spirited driving.",
                 "kmTravelled": 27000,
                 "horsepower": 268,
-                "category": "cars"
+                "category": "cars",
+                "id": "f6g7h8i9",
             },
             "g7h8i9j0": {
                 "ownerId": "user-004",
@@ -1442,7 +1448,8 @@
                 "desc": "All-electric performance with cutting-edge tech and minimalist design.",
                 "kmTravelled": 15000,
                 "horsepower": 283,
-                "category": "cars"
+                "category": "cars",
+                "id": "g7h8i9j0",
             },
             "h8i9j0k1": {
                 "ownerId": "user-004",
@@ -1456,7 +1463,8 @@
                 "desc": "A luxury EV with dynamic driving, high-end materials, and sleek aesthetics.",
                 "kmTravelled": 8000,
                 "horsepower": 335,
-                "category": "cars"
+                "category": "cars",
+                "id": "h8i9j0k1",
             }
         },
         "jeeps": {
@@ -1473,6 +1481,7 @@
                 kmTravelled: 22000,
                 horsepower: 285,
                 category: "jeeps", 
+                "id": "dhjwie23d",
             }
         },
         "motorcycles": {
@@ -1488,7 +1497,8 @@
                 "desc": "A classic motorcycle with a raw, stylish look and a powerful engine.",
                 "kmTravelled": 12000,
                 "horsepower": 50,
-                "category": "motorcycles"
+                "category": "motorcycles",
+                "id": "i9j0k1l2",
             },
             "j0k1l2m3": {
                 "ownerId": "user-006",
@@ -1502,7 +1512,8 @@
                 "desc": "A high-performance sport bike with impressive handling and speed.",
                 "kmTravelled": 8000,
                 "horsepower": 117,
-                "category": "motorcycles"
+                "category": "motorcycles",
+                "id": "j0k1l2m3",
             }
         },
         "tractors": {
@@ -1518,7 +1529,8 @@
                 "desc": "A reliable tractor for all your farming needs with great fuel efficiency.",
                 "kmTravelled": 1000,
                 "horsepower": 55,
-                "category": "tractors"
+                "category": "tractors",
+                "id": "k1l2m3n4",
             }
         },
         "trucks": {
@@ -1534,7 +1546,8 @@
                 "desc": "A powerful truck designed for heavy-duty jobs and long-distance hauling.",
                 "kmTravelled": 40000,
                 "horsepower": 450,
-                "category": "trucks"
+                "category": "trucks",
+                "id": "l2m3n4o5",
             }
         },
         "buses": {
@@ -1550,7 +1563,8 @@
                 "desc": "An electric bus designed for sustainable public transportation.",
                 "kmTravelled": 5000,
                 "horsepower": 320,
-                "category": "buses"
+                "category": "buses",
+                "id": "m3n4o5p6",
             }
         },
         "caravans": {
@@ -1566,7 +1580,8 @@
                 "desc": "A luxury caravan perfect for long trips and family vacations.",
                 "kmTravelled": 3000,
                 "horsepower": 0,
-                "category": "caravans"
+                "category": "caravans",
+                "id": "n4o5p6q7",
             }
         },
         "industrial": {
@@ -1582,7 +1597,8 @@
                 "desc": "A powerful industrial excavator for heavy-duty construction work.",
                 "kmTravelled": 1500,
                 "horsepower": 200,
-                "category": "industrial"
+                "category": "industrial",
+                "id": "o5p6q7r8",
             }
         },
     	records: {
