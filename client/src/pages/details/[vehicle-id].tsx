@@ -10,12 +10,29 @@ export const getServerSideProps = async ({ params }: { params: { [key: string]: 
 
     return {
         props: {
-            id: vehicleId,
+            vehicleId,
         }
     };
 };
 
-const Details: React.FC<DetailsProps> = ({ id }) => {
+const Details: React.FC<DetailsProps> = ({ vehicleId }) => {
+
+     const vehicle = {
+        id: "a1b2c3d4",
+        ownerId: "user-001",
+        src: "https://images.unsplash.com/photo-1603216934532-6d98729f9c60",
+        brand: "Mercedes-Benz",
+        model: "C-Class",
+        type: "Luxury Sedan",
+        engine: "Petrol",
+        transmission: "Automatic",
+        price: 42000,
+        desc: "A comfortable and stylish sedan with refined handling and a premium interior.",
+        kmTravelled: 23000,
+        horsepower: 255,
+        category: "cars",
+    };
+
     return (
          <div className="min-h-screen bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
             <div className="max-w-4xl mx-auto bg-white shadow-md rounded-lg overflow-hidden">
