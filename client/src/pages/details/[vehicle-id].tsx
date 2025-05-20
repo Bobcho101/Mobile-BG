@@ -20,7 +20,7 @@ const Details: React.FC<DetailsProps> = ({ vehicleId }) => {
      const vehicle = {
         id: "a1b2c3d4",
         ownerId: "user-001",
-        src: "https://images.unsplash.com/photo-1603216934532-6d98729f9c60",
+        src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjDS_dbWCX0HzFMi_RQQzR9_hqHl7_vXpCXA&s",
         brand: "Mercedes-Benz",
         model: "C-Class",
         type: "Luxury Sedan",
