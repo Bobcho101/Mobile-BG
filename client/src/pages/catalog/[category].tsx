@@ -12,6 +12,7 @@ type Vehicle = {
     transmission: string;
     engine: string;
     price: number;
+    id: string;
 };
 
 
@@ -110,7 +111,7 @@ const Catalog: React.FC<{ vehicles: Vehicle[] }> = ({ vehicles }) => {
                         ${car.price}
                         </span>
                         <a
-                        href="#car-details"
+                        href={`/details/${car.id}`}
                         className="text-blue-500 hover:underline"
                         >
                         View Details
